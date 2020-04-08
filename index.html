@@ -1,8 +1,74 @@
 <!DOCTYPE html>
-<html>
+<html lang="ja">
+
+<head prefix="og: http://ogp.me/ns#">
+    <!--文字コード-->
+    <meta charset="utf-8">
+    <!--IE-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--タイトル-->
+    <title>OITバーチャルライブ研究会</title>
+    <!--viewport-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--サイトの説明-->
+    <meta name="description" content="OITバーチャルライブ研究会の公式サイトです。イベントの告知や活動内容などを掲載しています。">
+    <!--ファビコン-->
+    <link rel="icon" type="image/png" href="fav.png">
+    <!--スマホショートカットアイコン-->
+    <link rel="apple-touch-icon" sizes="180x180" href="icon.png">
+
+    <!--OGP-->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="OITバーチャルライブ研究会">
+    <meta property="og:description" content="OITバーチャルライブ研究会の公式サイトです。イベントの告知や活動内容などを掲載しています。">
+    <meta property="og:url" content="https://oitvl.com">
+    <meta property="og:image" content="サイトアイコン画像のパス指定">
+    
+    <!--CSS/JS-->
+    <link rel="stylesheet" href="css/uikit.min.css">
+    <script src="js/uikit.min.js" async></script>
+    <script src="js/uikit-icons.min.js" async></script>
+</head>
+
 <body>
-<h1>OITバーチャルライブ研究会</h1>
-<p>テストページ</p>
-  
+    <!--背景スライドショー-->
+    <div class="uk-visible-toggle uk-position-fixed" style="z-index: -1;" uk-slideshow="animation: scale">
+        <ul class="uk-slideshow-items uk-position-fixed" style="z-index: -1;" uk-height-viewport="min-height: 300">
+            <li class="uk-position-fixed" style="z-index: -1;">
+                <img src="/img/bg1.jpg" alt="" uk-cover>
+            </li>
+            <li class="uk-position-fixed" style="z-index: -1;">
+                <img src="/img/bg2.jpg" alt="" uk-cover>
+            </li>
+        </ul>
+        <a class="uk-position-center-left uk-position-fixed uk-position-small uk-hidden-hover" style="z-index: -1;" href="#" uk-slidenav-previous uk-slideshow-item="previous"></a>
+        <a class="uk-position-center-right uk-position-fixed uk-position-small uk-hidden-hover" style="z-index: -1;" href="#" uk-slidenav-next uk-slideshow-item="next"></a>
+    </div>
+
+    <!--ヘッダー-->
+    <header class="uk-light uk-position-top">
+        <h1 class="uk-margin-remove">OITバーチャルライブ研究会</h1>
+        <button class="uk-position-right" uk-toggle="target: #topmenu" type="button"><span uk-icon="icon: menu"></span></button>
+    </header>
+    
+    <!--<div uk-height-viewport="min-height: 300"></div>-->
+    <div id="content_wrapper" style="margin-top: 100vh;">
+    テストペーじ
+    </div>
+
+    <!--フッター-->
+    <footer>
+        <p>© 2020 OITバーチャルライブ研究会</p>
+    </footer>
+
+    <!-- オフカンバス -->
+    <div id="topmenu" uk-offcanvas>
+        <div class="uk-offcanvas-bar">
+            <button class="uk-offcanvas-close" type="button" uk-close></button>
+            test
+        </div>
+    </div>
+
 </body>
+
 </html>
