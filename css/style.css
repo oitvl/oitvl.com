@@ -1,0 +1,38 @@
+.content_bg{
+    background:rgba(0,0,0,0.7);
+}
+
+html{
+    font-size: 62.5%;
+}
+body{
+    font-size:1.6rem;/* 16px*/
+    line-height: 2;
+    }
+    
+
+@media (min-width: 1200px) {/* 1200px以上*/
+    h1 {
+        font-size: 3.6rem;/* 36px*/
+    }
+    h2 {
+        font-size: 3rem;/* 24px*/
+    }
+    h3 {
+        font-size: 1.4rem;
+    }
+}
+@media screen and (max-width: 640px) {/* 640px以下*/
+    body{
+    line-height: 2;
+    }
+    h1{
+        font-size: 2.4rem;/* 24px*/
+    }
+    h2 {
+        font-size: 2.2rem;/* 20px*/
+    }
+    h3 {
+        font-size: 1.2rem;
+    }
+}

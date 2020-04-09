@@ -26,6 +26,7 @@
     
     <!--CSS/JS-->
     <link rel="stylesheet" href="css/uikit.min.css">
+    <link rel="stylesheet" href="css/style.css">
     <script src="js/uikit.min.js"></script>
     <script src="js/uikit-icons.min.js"></script>
 </head>
@@ -34,30 +35,89 @@
     <!--背景スライドショー-->
     <div class="uk-visible-toggle uk-position-fixed" style="z-index: -1;" uk-slideshow="animation: scale">
         <ul class="uk-slideshow-items uk-position-fixed" style="z-index: -1;" uk-height-viewport="min-height: 300">
-            <li class="uk-position-fixed" style="z-index: -1;">
+            <li class="uk-position-fixed">
                 <img src="/img/bg1.jpg" alt="" uk-cover>
             </li>
-            <li class="uk-position-fixed" style="z-index: -1;">
+            <li class="uk-position-fixed">
                 <img src="/img/bg2.jpg" alt="" uk-cover>
             </li>
         </ul>
-        <a class="uk-position-center-left uk-position-fixed uk-position-small uk-hidden-hover" style="z-index: -1;" href="#" uk-slidenav-previous uk-slideshow-item="previous"></a>
-        <a class="uk-position-center-right uk-position-fixed uk-position-small uk-hidden-hover" style="z-index: -1;" href="#" uk-slidenav-next uk-slideshow-item="next"></a>
+        <a class="uk-position-center-left uk-position-fixed uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slideshow-item="previous"></a>
+        <a class="uk-position-center-right uk-position-fixed uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slideshow-item="next"></a>
     </div>
 
     <!--ヘッダー-->
     <header class="uk-light uk-position-top">
-        <h1 class="uk-margin-remove-bottom uk-text-large uk-margin-left">OITバーチャルライブ研究会</h1>
+        <h1 class="uk-margin-remove-bottom uk-margin-left">OITバーチャルライブ研究会</h1>
         <button class="uk-position-right" uk-toggle="target: #topmenu" type="button"><span uk-icon="icon: menu"></span></button>
     </header>
     
-    <!--<div uk-height-viewport="min-height: 300"></div>-->
-    <div id="content_wrapper" style="margin-top: 100vh;">
-    テストペーじ
+    <!--メイン-->
+    <div id="main_wrap" style="margin-top: 100vh;">
+
+        <div class="content_bg uk-flex uk-flex-center uk-light uk-padding">
+            <div class="content_wrap uk-text-center" style="width: 960px">
+                <h2 class="uk-margin-remove-vertical">NEWS</h2>
+                <h3 class="uk-margin-remove-top ">最新情報</h3>
+                <div class="content">
+                    <div class="content_image">
+                        <p>イメージ</p>
+                    </div>
+                    <div class="discription_text">
+                        <p>ツイッター</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="content_bg uk-flex uk-flex-center uk-light uk-padding">
+            <div class="content_wrap uk-text-center" style="width: 960px">
+                <h2 class="uk-margin-remove-vertical">ABOUT</h2>
+                <h3 class="uk-margin-remove-top ">当サークルについて</h3>
+                <div class="content">
+                    <div class="content_image">
+                        <p>イメージ</p>
+                    </div>
+                    <div class="discription_text">
+                        <p>団体の紹介</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="content_bg uk-flex uk-flex-center uk-light uk-padding">
+            <div class="content_wrap uk-text-center" style="width: 960px">
+                <h2 class="uk-margin-remove-vertical">ACTIVITY</h2>
+                <h3 class="uk-margin-remove-top ">活動内容</h3>
+                <div class="content">
+                    <div class="content_image">
+                        イメージ
+                    </div>
+                    <div class="discription_text">
+                        <p>活動の紹介</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="content_bg uk-flex uk-flex-center uk-light uk-padding">
+            <div class="content_wrap uk-text-center" style="width: 960px">
+                <h2 class="uk-margin-remove-vertical">EVENT</h2>
+                <h3 class="uk-margin-remove-top ">開催イベント</h3>
+                <div class="content">
+                    <div class="content_image">
+                        イメージ
+                    </div>
+                    <div class="discription_text">
+                        <p>活動経歴</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
     <!--フッター-->
-    <footer>
+    <footer class="uk-text-center uk-background-muted uk-dark uk-padding-large">
         <p>© 2020 OITバーチャルライブ研究会</p>
     </footer>
 
