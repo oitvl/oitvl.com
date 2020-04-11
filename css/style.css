@@ -20,6 +20,8 @@ footer{
     margin-top: 40vh;
     text-shadow:0 0 6px #000000;
 }
+
+
     
 
 @media (min-width: 1200px) {/* 1200px以上*/
@@ -52,4 +54,20 @@ footer{
     footer {
         font-size: 1rem;
     }
+    .uk-accordion-content{
+        width: 80vw;
+    }
+    .movie-wrap {
+        position: relative;
+        padding-bottom: 56.25%; /*アスペクト比 16:9の場合の縦幅*/
+        height: 0;
+        overflow: hidden;
+   }
+    .movie-wrap iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+   }
 }
