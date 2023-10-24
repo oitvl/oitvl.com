@@ -1,9 +1,262 @@
+<!DOCTYPE html>
 <html>
 <head>
-    <h1>VL研QRコード置き場</h1>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <style>
+        
+        /*文字選択させない*/
+        body {
+            user-select: none;
+        }
+        /* 上部の黒い背景 */
+        .black-background {
+            background-color: #000; /* 黒色の背景色 */
+            color: #fff; /* 白色のテキストカラー */
+            padding: 200px; /* 上部のパディングを設定 */
+            text-align: center; /* テキストを中央寄せに */
+        }
+
+        /* 下部の白い背景 */
+        .white-background {
+            background-color: #fff; /* 白色の背景色 */
+            color: #000; /* 黒色のテキストカラー */
+            padding: 200px; /* 下部のパディングを設定 */
+            text-align: center; /* テキストを中央寄せに */
+        }
+        .blue-background {
+            background-color: #3366cc; /* 青色の背景色 */
+            color: #fff; /* 白色のテキストカラー */
+            padding: 200px; /* 下部のパディングを設定 */
+            text-align: center; /* テキストを中央寄せに */
+        }
+        .gray-background {
+            background-color: #d3d3d3; /* うすい灰色の背景色 */
+            color: #000; /* 白色のテキストカラー */
+            padding: 200px; /* 下部のパディングを設定 */
+            text-align: center; /* テキストを中央寄せに */
+        }
+        /*図形*/
+        .rect1{
+	            width: 200px;
+	            height: 200px;
+	            border: 1px solid;
+                text-align: right;
+                margin-left:50px;
+                margin-top: 20px;
+        }
+         /*図形*/
+        .rect2{
+	            width: 200px;
+	            height: 200px;
+	            border: 1px solid;
+                text-align: left;
+                margin-left:50px;
+                margin-top: 20px;
+        }
+
+        /*ボタン共通設定*/
+        .btn a {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            width: 300px;
+            height: 60px;
+            color: #333;
+            font-size: 18px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+.btn a:hover {
+	color: #f2f2f2;
+} .button001 a {
+                background: #7d56b4; 
+                border-radius: 40px;
+                position: relative;
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+                margin: 0 auto;
+                max-width: 500px;
+                padding: 10px 5px;
+                color: #313131;
+                text-decoration: none; /* 下線を非表示にする */
+                transition: 0.3s ease-in-out;
+                font-weight: 800; /* フォントの太さを調整 */
+                font-size: 24px; /* フォントサイズを大きくする */
+                font-family: "Nico Moji";
+                            
+            }
+            .button001 a:hover {
+                background: #313131;
+                color: #FFF;
+            }
+            .button001 a:after {
+                content: '';
+                width: 5px;
+                height: 5px;
+                border-top: 3px solid #313131;
+                border-right: 3px solid #313131;
+                transform: rotate(45deg) translateY(-50%);
+                position: absolute;
+                top: 50%;
+                right: 20px;
+                border-radius: 1px;
+                transition: 0.3s ease-in-out;
+            }
+            .button001 a:hover:after {
+                border-color: #FFF;
+            }
+            /*ボタン*/
+            .button002 a {
+                background: #7d56b4; 
+                border-radius: 40px;
+                position: relative;
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+                margin: 0 auto;
+                max-width: 500px;
+                padding: 10px 5px;
+                color: #313131;
+                text-decoration: none; /* 下線を非表示にする */
+                transition: 0.3s ease-in-out;
+                font-weight: 800; /* フォントの太さを調整 */
+                font-size: 24px; /* フォントサイズを大きくする */
+                font-family: "Nico Moji";
+            }
+            .button002 a:hover {
+                background: #313131;
+                color: #FFF;
+            }
+            .button002 a:after {
+                content: '';
+                width: 5px;
+                height: 5px;
+                border-top: 3px solid #313131;
+                border-right: 3px solid #313131;
+                transform: rotate(45deg) translateY(-50%);
+                position: absolute;
+                top: 50%;
+                right: 20px;
+                border-radius: 1px;
+                transition: 0.3s ease-in-out;
+            }
+            .button002 a:hover:after {
+                border-color: #FFF;
+            }
+            a.btn_07 {
+                display: block;
+                text-align: center;
+                vertical-align: middle;
+                text-decoration: none;
+                width: 200px; /* ボタンの幅を大きく変更 */
+                margin: auto;
+                padding: 1.5rem 6rem; /* パディングを増やしてボタンの大きさを調整 */
+                font-family: "Nico Moji";
+                font-weight: bold;
+                color: blue; /* テキストの色を赤色に変更 */
+                background: #dbdddd; /* 背景色を赤色に変更 */
+                border-bottom: 2px solid #dde0e0;
+                border-radius: 100vh;
+                box-shadow: 0 2px 7px rgba(0, 0, 0, .3);
+                -webkit-box-shadow: 0 2px 7px rgba(0, 0, 0, .3);
+                transition: 0.5s;
+            }
+            a.btn_07:hover {
+                color: #fff;
+                background: #19152a;
+                border-bottom: 2px solid #fff;
+                transform: translateY(3px);
+            }
+
+        /* h1要素のスタイル設定 */
+        h1 {
+            font-family: "Nico Moji";
+            font-size: 100px; /* フォントサイズを大きく設定 (例: 72px) */
+            text-align: center; /* テキストを中央寄せに */
+            margin-top: 50px; /* 上部のマージンを設定 */
+            animation: fadeIn 2s ease-in-out forwards; /* フェードインのアニメーションを適用 */
+        }
+        h2{
+            font-family: 'Caveat', cursive;
+            font-size: 50px; /* フォントサイズを大きく設定 (例: 72px) */
+            opacity: 0; /* 初期状態では非表示 */
+            animation: fadeIn 2s ease-in-out forwards; /* フェードインのアニメーションを適用 */
+            margin-left: -2px;
+        }
+        h3{
+            font-family: "Nico Moji";
+            font-size: 30px;
+            opacity: 0; 
+            animation: fadeIn 2s ease-in-out forwards;
+             
+            
+            
+        }
+        h4{
+            font-family: 'Nico Moji'; 
+            font-size: 31px; 
+            opacity: 0; 
+            animation: fadeIn 2s ease-in-out forwards; 
+            text-align:left;
+        }
+        h5{
+            text-align:left;
+        }
+        
+        /* フェードインのキーフレームを定義 */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0; /* アニメーション開始時は完全に透明 */
+            }
+            100% {
+                opacity: 1; /* アニメーション終了時は完全に表示 */
+            }
+        }
+      
+
+    </style>
 </head>
 <body>
-<h2>北山祭VRライブ</h2>
-<h3>更新中…</h3>
+    <link href="https://fonts.googleapis.com/earlyaccess/nicomoji.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Caveat" rel="stylesheet">
+
+    <div class="black-background">
+        <h1>北山祭VRライブ</h1>
+        <h2>Kitayamafestival: VRLive</h2>
+    </div>
+
+    <!-- 白い背景 -->
+    <div class="white-background">
+        <h1>VRライブ開催情報</h1>
+        <h2>第一回VRライブ</h2>
+        <div class="btn button001">
+            <a href="https://cluster.mu/e/9349c8e3-0c9f-4f73-b995-bcdbb0b13ccf">第一回VRライブ会場はこちら</a>
+        </div>
+        <h3>↓QRコードはこちら↓</h3>
+        <img src="./img/23kitayamaVR/qrcode_cluster1.png" width="300" height="300" alt="QRコード" style="margin-left: 10px;">
+        <h2>第二回VRライブ</h2>
+        <div class="btn button002">
+            <a href="https://cluster.mu/e/b4534c1d-9bb2-4b83-9aea-626033c1e208">第二回VRライブ会場はこちら</a>
+        </div>
+        <h3>↓QRコードはこちら↓</h3>
+        <img src="./img/23kitayamaVR/qrcode_cluster2.png" width="300" height="300" alt="QRコード" style="margin-left: 10px;">
+        <h3 style="color: red; position: relative; top: 4em; margin-left: 50px;">急遽時間が変更する場合がございます。</h3>
+    </div>
+    <div class="gray-background">
+        <h1> Cluster</h1>
+        <h4 >説明文faafafafafafafaaaafafaf</h4>
+
+    </div>
+    <div class="blue-background">
+    <h1>SNS</h1>
+        <h2>twitter</h2>
+        <a href="#" class="btn_07">VL研公式twitterはこちら</a>
+        <h2>Instagram</h2>
+        <a href="#" class="btn_07">VL研公式Instagramはこちら</a>
+    </div>
 </body>
 </html>
