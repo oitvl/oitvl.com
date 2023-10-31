@@ -3,6 +3,11 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <style>
+
+        /*スマホ版の改行制御*/    
+        span {
+            display: inline-block;
+        }
         
         /*文字選択させない*/
         body {
@@ -15,6 +20,7 @@
             padding: 200px; /* 上部のパディングを設定 */
             text-align: center; /* テキストを中央寄せに */
         }
+
 
         /* 下部の白い背景 */
         .white-background {
@@ -72,7 +78,7 @@
 .btn a:hover {
 	color: #f2f2f2;
 } .button001 a {
-                background: #7d56b4; 
+                background: #ffffff; 
                 border-radius: 40px;
                 position: relative;
                 display: flex;
@@ -87,7 +93,7 @@
                 font-weight: 800; /* フォントの太さを調整 */
                 font-size: 24px; /* フォントサイズを大きくする */
                 font-family: "Nico Moji";
-                            
+                border: 5px solid #333;/*枠を付ける*/          
             }
             .button001 a:hover {
                 background: #313131;
@@ -111,7 +117,7 @@
             }
             /*ボタン*/
             .button002 a {
-                background: #7d56b4; 
+                background: #ffffff; 
                 border-radius: 40px;
                 position: relative;
                 display: flex;
@@ -126,6 +132,7 @@
                 font-weight: 800; /* フォントの太さを調整 */
                 font-size: 24px; /* フォントサイズを大きくする */
                 font-family: "Nico Moji";
+                border: 5px solid #333;/*枠を付ける*/ 
             }
             .button002 a:hover {
                 background: #313131;
@@ -225,28 +232,28 @@
     <link href="https://fonts.googleapis.com/css?family=Caveat" rel="stylesheet">
 
     <div class="black-background">
-        <h1>北山祭VRライブ</h1>
+        <h1><span>北山祭</span><span>VRライブ</span></h1>
         <h2>Kitayamafestival: VRLive</h2>
     </div>
 
     <!-- 白い背景 -->
     <div class="white-background">
-        <h1>VRライブ開催情報</h1>
+        <h1><span>VRライブ</span><span>開催情報</span></h1>
         <h2>第一回VRライブ</h2>
         <h2>12:15~12:30</h2>
         <div class="btn button001">
-            <a href="https://cluster.mu/e/9349c8e3-0c9f-4f73-b995-bcdbb0b13ccf">第一回VRライブ会場はこちら</a>
+            <a href="https://cluster.mu/e/9349c8e3-0c9f-4f73-b995-bcdbb0b13ccf">第一回会場はこちら</a>
         </div>
         <h3>↓QRコードはこちら↓</h3>
         <img src="./img/23kitayamaVR/qrcode_cluster1.png" width="300" height="300" alt="QRコード" style="margin-left: 10px;">
         <h2>第二回VRライブ</h2>
         <h2>15:15~15:30</h2>
         <div class="btn button002">
-            <a href="https://cluster.mu/e/b4534c1d-9bb2-4b83-9aea-626033c1e208">第二回VRライブ会場はこちら</a>
+            <a href="https://cluster.mu/e/b4534c1d-9bb2-4b83-9aea-626033c1e208">第二回V会場はこちら</a>
         </div>
         <h3>↓QRコードはこちら↓</h3>
         <img src="./img/23kitayamaVR/qrcode_cluster2.png" width="300" height="300" alt="QRコード" style="margin-left: 10px;">
-        <h3 style="color: red; position: relative; top: 4em; margin-left: 50px;">急遽時間が変更する場合がございます。</h3>
+        <h3 style="color: red; position: relative; top: 4em; margin-left: 50px;"><span>急遽時間が変更する</span>><sapn>場合がございます。</sapn></h3>
     </div>
     <div class="gray-background">
         <h1> Cluster</h1>
