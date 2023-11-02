@@ -36,10 +36,33 @@
             text-align: center; /* テキストを中央寄せに */
         }
         .gray-background {
-            background-color: #d3d3d3; /* うすい灰色の背景色 */
-            color: #000; /* 白色のテキストカラー */
-            padding: 200px; /* 下部のパディングを設定 */
-            text-align: center; /* テキストを中央寄せに */
+            background-image: url('img/23kitayamaVR/VL1.png'); /* 'cluster_1.png'の部分に実際の画像のパスを指定してください */
+            background-size: cover; /* 画像が背景全体を覆うように調整 */
+            background-repeat: no-repeat; /* 画像の繰り返しを防ぎます */
+            color: #000; /* テキストの色を背景とのコントラストのために白に設定 */
+            padding: 450px; /* コンテンツの周りにスペースを作成するためにパディングを調整 */
+            text-align: center;
+            transform: translateY(0.1%);
+    
+            
+        }
+        .set-background {
+            background-image: url('img/23kitayamaVR/VL2.png'); /* Replace 'your-image-path.jpg' with the actual path to your image */
+            background-size: cover; /* This property ensures the image covers the entire background */
+            background-repeat: no-repeat; /* Prevent image repetition */
+            color: #000;
+            padding: 450px;
+            text-align: center;
+            
+        }
+        .set1-background {
+            background-image: url('img/23kitayamaVR/VL3.png'); /* Replace 'your-image-path.jpg' with the actual path to your image */
+            background-size: cover; /* This property ensures the image covers the entire background */
+            background-repeat: no-repeat; /* Prevent image repetition */
+            color: #000;
+            padding: 450px;
+            text-align: center;
+         
         }
         /*図形*/
         .rect1{
@@ -242,23 +265,25 @@
         <h2>第一回VRライブ</h2>
         <h2>12:15~12:30</h2>
         <div class="btn button001">
-            <a href="https://cluster.mu/w/5d194836-c001-4366-b5bd-a66c391dc98a">第一回会場はこちら</a>
+            <a href="https://cluster.mu/e/9349c8e3-0c9f-4f73-b995-bcdbb0b13ccf">第一回会場はこちら</a>
         </div>
         <h3>↓QRコードはこちら↓</h3>
         <img src="./img/23kitayamaVR/qrcode_cluster1.png" width="300" height="300" alt="QRコード" style="margin-left: 10px;">
         <h2>第二回VRライブ</h2>
         <h2>15:15~15:30</h2>
         <div class="btn button002">
-            <a href="https://cluster.mu/e/b4534c1d-9bb2-4b83-9aea-626033c1e208">第二回V会場はこちら</a>
+            <a href="https://cluster.mu/e/b4534c1d-9bb2-4b83-9aea-626033c1e208">第二回会場はこちら</a>
         </div>
         <h3>↓QRコードはこちら↓</h3>
         <img src="./img/23kitayamaVR/qrcode_cluster2.png" width="300" height="300" alt="QRコード" style="margin-left: 10px;">
         <h3 style="color: red; position: relative; top: 4em; margin-left: 50px;"><span>急遽時間が変更する</span>><sapn>場合がございます。</sapn></h3>
     </div>
+    
     <div class="gray-background">
-        <h1> Cluster</h1>
-        <h4 >説明文faafafafafafafaaaafafaf</h4>
-
+    </div>
+    <div class="set-background">
+    </div>
+    <div class="set1-background">
     </div>
     <div class="blue-background">
     <h1>SNS</h1>
