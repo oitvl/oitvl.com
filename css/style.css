@@ -21,7 +21,18 @@ footer{
     text-shadow:0 0 6px #000000;
 }
 #logo{
-    width: 500px;
+    width:90vw;
+}
+a.btn--blue {
+    color: #fff;
+    background-color: rgb(51, 0, 235);
+}
+a.btn--blue:hover {
+    color: #fff;
+    background: rgb(51, 0, 235);
+}
+a.btn--radius {
+     border-radius: 300vh;
 }
 
 
