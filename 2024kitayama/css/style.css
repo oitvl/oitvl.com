@@ -2,30 +2,30 @@
 @font-face {
   display: swap;
   font-family: "Noto Sans JP";
-  src: url(../2024kitayama/fonts/NotoSansJP-Regular.woff) format("woff"), url(../2024kitayama/fonts/NotoSansJP-Regular.ttf) format("tff");
+  src: url(../oitvl.com/2024kitayama/fonts/NotoSansJP-Regular.woff) format("woff"), url(../oitvl.com/2024kitayama/fonts/NotoSansJP-Regular.ttf) format("tff");
 }
 @font-face {
   display: swap;
   font-family: "SUSE";
   font-weight: 700;
-  src: url(../2024kitayama/fonts/SUSE-Bold.woff) format("woff"), url(../2024kitayama/fonts/SUSE-Bold.ttf) format("tff");
+  src: url(../oitvl.com/2024kitayama/fonts/SUSE-Bold.woff) format("woff"), url(../oitvl.com/2024kitayama/fonts/SUSE-Bold.ttf) format("tff");
 }
 @font-face {
   display: swap;
   font-family: "DotGothic16";
-  src: url(../2024kitayama/fonts/DotGothic16-Regular.woff) format("woff"), url(../2024kitayama/fonts/DotGothic16-Regular.ttf) format("tff");
+  src: url(../oitvl.com/2024kitayama/fonts/DotGothic16-Regular.woff) format("woff"), url(../oitvl.com/2024kitayama/fonts/DotGothic16-Regular.ttf) format("tff");
 }
 @font-face {
   display: swap;
   font-family: "M PLUS Rounded 1c";
   font-weight: 400;
-  src: url(../2024kitayama/fonts/MPLUSRounded1c-Regular.woff) format("woff"), url(../2024kitayama/fonts/MPLUSRounded1c-Regular.ttf) format("tff");
+  src: url(../oitvl.com/2024kitayama/fonts/MPLUSRounded1c-Regular.woff) format("woff"), url(../oitvl.com/2024kitayama/fonts/MPLUSRounded1c-Regular.ttf) format("tff");
 }
 @font-face {
   display: swap;
   font-family: "M PLUS Rounded 1c";
   font-weight: 800;
-  src: url(../2024kitayama/fonts/MPLUSRounded1c-Bold.woff) format("woff"), url(../2024kitayama/fonts/MPLUSRounded1c-Bold.ttf) format("tff");
+  src: url(../oitvl.com/2024kitayama/fonts/MPLUSRounded1c-Bold.woff) format("woff"), url(../oitvl.com/2024kitayama/fonts/MPLUSRounded1c-Bold.ttf) format("tff");
 }
 /*ディスプレイサイズが769px以上の端末で閲覧した時のデザイン（PC用）*/
 body {
@@ -95,7 +95,7 @@ header {
   align-items: flex-end;
   width: 100%;
   height: 100vh;
-  background-image: url(../2024kitayama/images/header.webp);
+  background-image: url(../oitvl.com/2024kitayama/images/header.webp);
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -119,7 +119,7 @@ header img {
 }
 
 #info {
-  background-image: url(../2024kitayama/images/backgroundimage.webp);
+  background-image: url(../oitvl.com/2024kitayama/images/backgroundimage.webp);
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
