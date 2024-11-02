@@ -8,7 +8,7 @@ if (window.matchMedia('(min-width: 501px)').matches) {
 }
 
 //交差する監視対象の要素取得
-const arrstr = "header img, #about .detail, #about .large, #event-info .wrapper, .heading h2";
+const arrstr = "header img, #about .detail, #about .large, #event-info .wrapper, .link, .move .heading h2";
 const elements = document.querySelectorAll(arrstr);
 console.log(elements);
 
