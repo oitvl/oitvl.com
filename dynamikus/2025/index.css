@@ -1,133 +1,151 @@
 @charset "UTF-8";
 * {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   background-color: rgb(121, 166, 221);
-  /* これはオーバーフローしても絶対スクロールバー表示するな！！！ってヤツ */
   overflow-x: hidden;
-  /* background-position:-50px; */
+  font-family: "IBM Plex Sans JP", sans-serif;
+  color: #212147;
 }
 
-/* --------------------- */
-/* ------追従UI---------*/
-/* .posiFixed{
-    z-index: 1;
-    position: fixed;bottom: 0;top: 0;
-    width: 100%;
-    height: 100%;
-
-    display:flex;
-    flex-direction: column;
-} */
-
-.menu {
-  z-index: 2;
+/* ---------背景------- */
+.background {
   position: fixed;
-
-  /* logoの大きさ */
-  height: 32vh;
-  margin-top: 60vh;
-  margin-bottom: 10vh;
-
-  width: 30vw;
-  min-width: 15vw;
-  margin-left: 35vw;
-  /* ---------- */
-
-  
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
 }
 
-#logoObj{
-    width: 100%;
-    height: 100%;
-    animation: grow-progress linear;
-  /* アニメーションを指定。イージングはlinear */
-  animation-timeline: scroll();
+.background img{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  object-fit: cover; /* 背景画像を画面全体にフィットさせる */
+  z-index: -1; /* 背景画像を最背面に配置 */
+}
+
+
+/* ------固定UIレイヤー------*/
+.fixed-ui-layer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  pointer-events: none; /* 下のコンテンツをクリックできるように */
+  z-index: 100;
+}
+
+.menu,
+.sns,
+.popup,
+#quickInfo {
+  pointer-events: auto; /* UI要素はクリックできるように */
+}
+
+/* メニューとロゴ（画面に固定） */
+.menu {
+  position:absolute;
+  top: 0;
+  /*bottom: 4vh;*/
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 34vh;
+  width: 80vw;
+  height: 50vh;
+  max-width: 500px;
+  max-height: 500px;
+  z-index: 20;;
+}
+
+#logoObj {
+  
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  /*
+  animation: grow-progress linear;
+  animation-timeline: scroll(root);
+  */
+  /* ★★★ スクロールアニメーションは削除 ★★★ */
 }
 
 .logo {
-    
-  margin: 0 auto;
-  width: 60%;
+  margin: 0;
+  width: 100%;
   height: 100%;
-
-  background-image: url("DynaMIKUs-Logo-color.png");
+  /* background-image: url("DynaMIKUs-Logo-color.png"); */
+  background-image: url("DynaMIKUs-Logo-color.svg");
   background-size: contain;
   background-repeat: no-repeat;
+  background-position: center;
+  animation: fuwafuwa 1.5s ease-in-out infinite alternate;
 
-  animation: hover;
+  /* transition: transform 0.3s ease; */
 }
 
 .logo:hover {
   transform: scale(1.1);
 }
-
 @keyframes grow-progress {
-  0% {
-    transform: translate(0, 0);
-  }
-  6% {
-    transform: translate(0, 0);
-  }
-  10% {
-    transform: translate(100%, 0);
-  }
-  100% {
-    transform: translate(100%, 0);
-  }
+    0% {
+        transform: translate(0,0);
+    }
+    6%{
+        transform: translate(0,0);
+    }
+    10% {
+        transform: translate(30vw,0);
+    }
+    100%{
+        transform: translate(30vw,0);
+    }
 }
 
-.logo p {
-  position: relative;
-  top: 1vh;
-  margin-left: 50%;
-  font-size: 18px;
-  color: aliceblue;
-  animation: fuwafuwa 1.5s ease-in-out infinite alternate;
+.logo p{
+    position: relative;top:2vh;
+    margin-left: 40%;
+    font-size: 18px;
+    color: aliceblue;
+    animation: fuwafuwa 1.5s ease-in-out infinite alternate;
 }
 @keyframes fuwafuwa {
   0% {
-    transform: translate(0, 0);
+    transform:translate(0, 0);
   }
   50% {
-    transform: translate(0, -1.5vh);
+    transform:translate(0, -1.5vh);
   }
   100% {
-    transform: translate(0, 0);
+    transform:translate(0, 0);
   }
 }
 
-/* ------------------ */
-/* popupシート------- */
-/* ボタンホバー */
-/* .menu label:hover {
-    background: gray;
-} */
-/* チェックボックスは非表示に */
 .menu input {
-  transform: scale(0);
-  left: 5vw;
   display: none;
-  width: 0;
-  height: 0;
 }
 
-/* クリックで内容部分を表示 */
 .menu input:checked + .popup {
-  transform: scale(1);
-  position: absolute;top:-50vh;left: 5vw;
-  width: 20vw;
-  min-width: 270px;
-  height: auto;
+  transform: translateX(-50%) scale(1);
   opacity: 1;
 }
-/* 中身を非表示に */
+
 .popup {
   padding: 10px;
-    /* .menu input:checked + .popupの場所と同じにすると同じ場所からpopupが出て戻る */
-    position: absolute;top:-50vh;left: 5vw;
+  /* .menu input:checked + .popupの場所と同じにすると同じ場所からpopupが出て戻る */
+  position: absolute;
+  top: -60vh;
 
   transform: scale(0);
   overflow: hidden;
@@ -136,7 +154,7 @@ body {
   opacity: 0;
   transition: 0.2s;
 
-  margin: auto;
+  margin: 10vw;
   display: block;
 
   border-top-width: 5px;
@@ -148,350 +166,54 @@ body {
   border-radius: 3px;
 
   background-color: rgba(238, 238, 238, 0.712);
+  /* position: absolute;
+  bottom: 110%;
+  left: 50%;
+  transform: translateX(-50%) scale(0);
+  transform-origin: bottom center;
+  width: 280px;
+  opacity: 0;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  padding: 15px;
+  border-radius: 8px;
+  background-color: rgba(250, 250, 250, 0.9);
+  backdrop-filter: blur(5px);
+  border: 2px double rgb(17, 76, 140); */
 }
 
 .popup ul {
   padding-left: 0;
+  list-style: none;
 }
 .popup li {
+  font-size: 22px;
+  line-height: 2;
+  text-align: center;
+  font-family: "M PLUS Rounded 1c", sans-serif;
   position: relative;
-  left: 10%;
-  font-size: 25px;
-  list-style: none;
-  line-height: 35px;
+  border-bottom: 1px dashed rgb(248, 248, 248);
+}
+.popup li::before {
+    content: "";
+    display: block;
+    justify-content:center;
+    width: 1rem;
+    height: 0.5rem;
 
+    border-left: 2px solid rgb(248, 248, 248);
+    border-bottom: 2px solid rgb(248, 248, 248);
+    transform: rotate(-45deg);
+    position: absolute;top:0.7em;left: 0.7em;
+}
+.popup a {
   color: #1d1d24;
-
-  font-family: "M PLUS Rounded 1c", sans-serif;
-  font-style: normal;
-  
-
-  /* border-bottom-width:3px;
-    border-bottom-style:dotted;
-    border-color:rgb(176, 136, 122); */
-}
-.popup a{
-    color: #404059;
-  /* aタグのURL下線消す */
   text-decoration: none;
-}
-.popup a:hover{
-    color: rgb(62, 147, 220);
-}
-
-.sns {
-  z-index: 2;
-  position: fixed;
-  min-width: 15vw;
-  height: 30vh;
-  margin-top: 5vh;
-
-  /* レイアウト -------------*/
-  display: flex;
-  align-items: flex-start;
-  justify-content: flex-start;
-  flex-direction: column;
-  /*------------------------*/
-}
-.sns a {
-  margin: 10px;
-  padding-top: 15px;
-  padding-left: 15px;
-  padding-right: 15px;
-  padding-bottom: 10px;
-
-  background-color: rgba(35, 29, 35, 0.251);
-  border-radius: 5px;
-
-  color: #ffffff;
-
-  /* aタグのURL下線消す */
-  text-decoration: none;
-}
-.sns img {
-  max-width: 50px;
-  min-width: 30px;
-}
-
-/*-------------------*/
-/* -----中身--------*/
-#quickInfo {
-  z-index: 2;
-  position: absolute;
-  top: 30vh;
-  right: 5vw;
-
-  min-width: 15em;
-  text-align: right;
-
-  font-family: "M PLUS Rounded 1c", sans-serif;
-  font-style: normal;
-  color: #ffffff;
-  font-size: 17px;
-
-  border: #fcfcfca8 solid 2px;
-  border-radius: 10px;
-  background-color: #2121475c;
-}
-#quickInfo p{
-    margin: 10px;
-}
-
-.main {
-  /* レイアウト -------------*/
-  display: flex;
-  /* 縦並びにする */
-  flex-flow: column;
-  /* 左右中央寄せ */
-  justify-content: center;
-  align-items: center;
-  /*------------------------*/
-
-  text-align: center;
-}
-
-#hide {
-  /* メインビジュアル画像を保存させないためのレイヤー */
-  position: absolute;
-  top: 0;
-  width: 100%;
-  height: 150vh;
-  z-index: 1;
-  margin: 0;
-  padding: 0;
-  background-color: #ffffff00;
-}
-
-#mainimg {
-  z-index: 0;
-  /* background-image: url(./main.jpg);
-    background-size: 100%;
-    background-repeat: no-repeat; */
-
-  animation-name: fadeIn1s;
-  animation-delay: 1.5s;
-  animation-duration: 1.5s;
-  animation-fill-mode: forwards;
-  opacity: 0;
-}
-@keyframes fadeIn1s {
-  0% {
-    transform: translate(-70%, 50%);
-    z-index: 5;
-  }
-  64%{
-    transform: scale(3) translate(-10%, 27%);
-    z-index: 5;
-  }
-  100% {
-    z-index: 0;
-    transform: scale(1);
-    transform: translate(-10%, 0);
-    opacity: 1;
-  }
-}
-#backimg {
-  z-index: -2;
-  /* background-image: url(./main.jpg);
-    background-size: 100%;
-    background-repeat: no-repeat; */
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-
-  /* background-image: url("main_back.png"); */
-  background-repeat: no-repeat;
-  background-size: 100%;
-
-  animation-name: fadeIn1s_backimg;
-  animation-delay: 0s;
-  animation-duration: 3s;
-  animation-fill-mode: forwards;
-  transform: scale(1);
-  opacity: 0;
-}
-@keyframes fadeIn1s_backimg {
-  0% {
-  }
-  55% {
-    transform: scale(1.2);
-  }
-  100% {
-    transform: scale(1);
-    opacity: 1;
-  }
-}
-
-.contents {
-  /* background-color: rgba(255, 251, 230, 0.872); */
-
-  /* border-top-style:double;
-    border-top-width:10px;
-    border-top-color:#74f6d8; */
-
-  position: relative;
-  top: -22vh;
-
-  font-size: 20px;
-  color: #212147;
-
-  padding: 100px;
-
-  width: 75%;
-  margin: 5px;
-
-  /* レイアウト -------------*/
-  display: flex;
-  /* 縦並びにする */
-  flex-direction: column;
-  /* 左右中央寄せ */
-  justify-content: center;
-  align-items: center;
-  /*------------------------*/
-
-  font-family: "IBM Plex Sans JP", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-}
-
-.contents h3 {
-  font-family: "M PLUS Rounded 1c", sans-serif;
-  font-weight: bold;
-  font-style: normal;
-  font-size: 50px;
-  color: #404059;
-}
-
-.rectangle {
-  z-index: -1;
-
-  width: 24em;
-  height: 1.5em;
-  border-radius: 10em;
-  background-color: rgb(249, 253, 255);
-  position: relative;
-  top: -1.1em;
-}
-
-.ribbon{
-    background-image: url("リボン.png");
-    width: 7em;
-    height: 5em;
-    background-size:contain;
-    background-repeat:  no-repeat;
-    margin: 0 auto;
-    position: relative;top:0.2em;
-}
-
-div.contents p {
-  width: 100%;
-  text-align: center;
-  margin: 30px;
-}
-
-#ticket {
-  width: 100%;
-  /* レイアウト -------------*/
-  display: flex;
-  /* 横並びにする */
-  flex-direction: row;
-  /* 左右中央寄せ */
-  justify-content: center;
-  align-items: center;
-  /*------------------------*/
-
-  background-color: #55575c37;
-  border: 3px solid #b8e9ef;
-  border-radius: 20px;
-}
-.ticBlock {
-  margin: 20px;
-  width: 100%;
-  font-size: 30px;
-
-  color: #fcfcfc;
-  text-align: center;
-  font-family: "M PLUS Rounded 1c", sans-serif;
-  font-weight: bold;
-  font-style: normal;
-  font-size: 30px;
-
-
-  
-}
-.ticBlock img {
-  width: 70%;
-  border: 3px solid #b8e9ef;
-  border-radius: 20px;
-}
-
-.ticBlock a {
-  
-  font-size: 30px;
-}
-
-.map {
-  width: 100%;
-  position: relative;
-  padding-top: 56.25%;
-
-  margin-top: 5vh;
-
-  /* レイアウト -------------*/
-  display: flex;
-  /* 横並びにする */
-  flex-direction: row;
-  /* 左右中央寄せ */
-  justify-content: center;
-  align-items: center;
-  /*------------------------*/
-
-  border: 3px solid #b8e9ef;
-}
-
-.map iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
-
-.img img {
-  margin: 30px;
-  max-width: 500px;
-  width: 60vw;
-  min-width: 400px;
-
-  border: 3px solid #b8e9ef;
-  border-radius: 5%;
-}
-
-UL {
-  list-style: none;
-  margin: 20px;
-}
-LI {
-  text-align: left;
-  position: relative;
-  font-size: 15px;
-  line-height: 25px;
-}
-LI::before {
-  content: "";
   display: block;
-  width: 1rem;
-  height: 0.5rem;
-
-  border-left: 2px solid rgb(230, 230, 230);
-  border-bottom: 2px solid rgb(230, 230, 230);
-  transform: rotate(-45deg);
-  position: absolute;
-  top: 0.25rem;
-  left: -2rem;
+  transition: color 0.2s;
 }
-
+.popup a:hover {
+  color: rgb(62, 147, 220);
+}
 .c-checkbox input[type="checkbox"] {
   display: none;
 }
@@ -512,43 +234,353 @@ LI::before {
   left: 5px;
 }
 
+/* SNSアイコン（画面に固定） */
+.sns {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.sns a {
+  padding: 8px;
+  background-color: rgba(35, 29, 35, 0.4);
+  border-radius: 5px;
+  color: #ffffff;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+.sns a:hover {
+  background-color: rgba(35, 29, 35, 0.7);
+}
+.sns img {
+  width: 35px;
+  height: 35px;
+  display: block;
+}
+
+/* --------------------- */
+/* ------スクロールコンテンツレイヤー------*/
+.scroll-content-layer {
+  position: relative;
+  z-index: 1; /* 固定レイヤーより下にする */
+}
+
+.hero-section {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  padding-top: 30px;
+  padding-bottom: 100px;
+  top: 0;
+  /* overflow: hidden; ★重要：アニメーションのはみ出しを隠す */
+}
+
+/*#hide {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+}*/
+
+/*#mainimg{
+  width : 100%;
+  height: 100%;
+}*/
+
+#mainimg {
+  position: relative;
+  top: 0;
+  z-index: 1;
+  height: 100%;
+  animation: fadeIn1s 1.5s 1.5s forwards;
+  opacity: 0;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+}
+
+#mainimg img{
+
+  height: 100%;
+}
+
+
+@keyframes fadeIn1s {
+  0% {
+    transform: translate(-70%, 50%);
+  }
+  64% {
+    transform: scale(3) translate(-10%, 27%);
+  }
+  100% {
+    transform: scale(1) translate(0, 0);
+    opacity: 1;
+  }
+}
+
+#backimg img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: -1;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  width: 100vw;
+  animation: fadeIn1s_backimg 3s forwards;
+  opacity: 0;
+}
+@keyframes fadeIn1s_backimg {
+  0% {
+  }
+  55% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* ライブ情報（画面に固定） */
+#quickInfo {
+  position: absolute;
+  bottom: 60px;
+  right: 3vw;
+  text-align: right;
+  font-family: "M PLUS Rounded 1c", sans-serif;
+  color: #ffffff;
+  /*font-size: min(2.1vw,22px);*/
+  border: #fcfcfca8 solid 2px;
+  border-radius: 10px;
+  background-color: #2121475c;
+  padding: 10px 20px;
+  z-index: 20;
+}
+
+.content-wrapper {
+  position: relative;
+  z-index: 0;
+}
+
+.contents {
+  font-size: 18px;
+  padding: 50px 30px;
+  width: 90%;
+  max-width: 800px;
+  margin: 0 auto 5vh auto;
+  border: 6px solid rgb(255, 255, 255);
+  text-align: center;
+  background-color: rgba(227, 247, 255, 0.8);
+}
+
+/* (以下、.contents 内部や footer のスタイルは変更なし) */
+/* ... */
+.contents h3 {
+  font-family: "M PLUS Rounded 1c", sans-serif;
+  font-weight: 800;
+  /* font-size: 40px; */
+  color: #404059;
+  margin-bottom: 20px;
+  font-size: min(8vw, 40px);
+  z-index: 2;
+  position: relative;
+}
+
+.rectangle {
+  top: -0.5em;
+  /*z-index: -1;*/
+  /*max-width: 22em;*/
+  height: 1.2em;
+  border-radius: 10em;
+  background-color: rgb(249, 253, 255);
+  margin: -35px 20Px 0 20px;
+  position: relative;
+}
+
+.ribbon {
+  top: 0.4em;
+  background-image: url("リボン.png");
+  width: 6em;
+  height: 4em;
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin: -15px auto 15px auto;
+  position: relative;
+}
+
+.contents p {
+  width: 100%;
+  text-align: center;
+  margin: 20px 0;
+  line-height: 1.8;
+}
+
+.theme {
+  font-size: 26px;
+  font-weight: 800;
+  color: #ff8f45;
+  font-family: "M PLUS Rounded 1c", sans-serif;
+}
+
+#ticket {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 30px;
+  margin-top: 20px;
+}
+.ticBlock {
+  width: 100%;
+  max-width: 300px;
+  color: #404059;
+  font-family: "M PLUS Rounded 1c", sans-serif;
+}
+.ticBlock img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border: 3px solid #b8e9ef;
+  border-radius: 20px;
+  margin-top: 10px;
+}
+.ticket-info {
+  width: 100%;
+  margin-top: 20px;
+  
+}
+.ticket-jump a {
+  text-decoration: none;
+  color: #ff8f45;
+  transition: color 0.2s;
+  font-size: min(6vw,1.8rem);
+  font-family: "M PLUS Rounded 1c", sans-serif;
+  font-weight: 800;
+}
+.ticket-info a:hover {
+  color: rgb(96, 255, 228);
+}
+
+.ticket-notion {
+  font-size: 14px;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.map {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  position: relative;
+  margin-top: 20px;
+  border: 3px solid #b8e9ef;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.map iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.seat img {
+  position: relative;
+  /**/
+  width: 500px;
+  max-width: 70vw;
+  border: 3px solid #b8e9ef;
+  border-radius: 20px;
+  display: block;
+  margin: 30px auto;
+}
+
+.notes-container {
+  width: 90%;
+  margin: 0 auto;
+}
+.notes-container ul {
+  list-style: none;
+  margin: 20px 0;
+}
+.notes-container li {
+  text-align: left;
+  position: relative;
+  font-size: 16px;
+  line-height: 1.8;
+  padding-left: 2rem;
+  margin-bottom: 1rem;
+}
+.notes-container li::before {
+  content: "☑";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: rgb(17, 76, 140);
+  font-size: 1.2rem;
+}
+
 footer {
   position: relative;
-  z-index: 2;
-
+  z-index: 20; /*ロゴメニューより上にくるように*/
   text-align: center;
-  /* background: linear-gradient(rgb(121, 166, 221),#fefeff); */
   background-color: rgb(249, 253, 255);
-  padding: 100px;
-
+  padding: 50px 20px;
   font-family: "IBM Plex Sans JP", sans-serif;
-  font-weight: 400;
-  font-style: normal;
+  color: #313147;
 }
+
+footer h3 {
+  font-family: "M PLUS Rounded 1c", sans-serif;
+  font-weight: 800;
+  font-size: 30px;
+  color: #404059;
+  margin-bottom: 20px;
+}
+
 #QA {
-  /* レイアウト -------------*/
   display: flex;
-  /* 縦並びにする */
-  flex-direction: row;
-  /* 左右中央寄せ */
   justify-content: center;
   align-items: center;
-  /*------------------------*/
+  flex-wrap: wrap;
+  gap: 30px;
+  margin-bottom: 20px;
 }
 
-footer p {
-  margin: 39px;
+#QA p,
+footer > div {
+  margin: 10px;
 }
+
 footer a {
-  margin: -39px;
-  padding: 39px;
   text-decoration: none;
   color: #313147;
+  transition: color 0.2s;
 }
 footer a:hover {
   color: rgb(62, 147, 220);
 }
-footer ul{
-    font-size: 12px;
-    margin-top: 5em;
+.license {
+  font-size: 12px;
+  margin-top: 40px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+  color: #555;
+  list-style: none;
+}
+.license li {
+  padding-left: 0;
+}
+.license li::before {
+  content: none;
 }
