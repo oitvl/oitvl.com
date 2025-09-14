@@ -156,7 +156,7 @@ text-align: center;
 }
 
 .log .log1 {
-  font-size: 30px;
+  font-size: 40px;
   position: absolute;
   z-index: 1;
   height: 100px;
@@ -370,3 +370,4 @@ footer {
     padding: 0.5rem;
   }
 }
+
