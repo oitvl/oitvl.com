@@ -446,15 +446,20 @@ display: flex;
 
 
 
+
 footer {
   background: transparent;
   /* footerの背景画像を透明に設定 */
-  padding: 1vw;
+  padding: 1rem;
   border-top: 5px solid lightgreen;
-  font-size: 1vw;
+  font-size: 1.5rem;
   font-weight: bold;
   text-align: center;
+  margin-bottom: 0;
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
 }
+
 
 
 /* スマホ用レイアウト調整 */
@@ -688,5 +693,6 @@ footer {
     font-size: 0.8rem;
     padding: 0.5rem;
   }
+
 
 }
