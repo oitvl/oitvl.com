@@ -506,13 +506,11 @@ body {
 }
 
 #setori {
-  text-decoration: none;
   display: none;
 }
 
 #setori:target {
   z-index: 50;
-  
   display: flex;
   align-items:center;
   justify-content:center;
@@ -521,26 +519,19 @@ body {
   position:fixed; top: 0;left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: #1d1d2434;
+  background-color: #1d1d242c;
 }
-
-.setori_close{
-  position:relative;top: 0;
-  text-decoration: none;
-  width: auto;
-  height: 10%;
-  color: #b8e9ef;
-}
-
 #setori img{
-  position: relative;top: 0;
-  max-width: 95vw;
-  width: auto;
+  width: 80%;
   height: auto;
-  max-height: 80vh;
+  object-fit: cover;
   border: 3px solid #b8e9ef;
   border-radius: 20px;
   margin-top: 10px;
+}
+
+.setori_close{
+
 }
 /*------------------------*/
 

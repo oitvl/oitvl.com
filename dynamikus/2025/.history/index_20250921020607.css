@@ -510,38 +510,28 @@ body {
   display: none;
 }
 
-#setori:target {
+#setori:checked {
   z-index: 50;
-  
+
   display: flex;
   align-items:center;
   justify-content:center;
   flex-direction:column;
 
   position:fixed; top: 0;left: 0;
-  width: 100vw;
-  height: 100vh;
-  background-color: #1d1d2434;
-}
-
-.setori_close{
-  position:relative;top: 0;
-  text-decoration: none;
-  width: auto;
-  height: 10%;
-  color: #b8e9ef;
-}
-
-#setori img{
-  position: relative;top: 0;
-  max-width: 95vw;
-  width: auto;
+  width: 100%;
   height: auto;
-  max-height: 80vh;
+  background-color: #1d1d242c;
+}
+#setori img{
+  width: 90%;
+  height: auto;
+  object-fit: cover;
   border: 3px solid #b8e9ef;
   border-radius: 20px;
   margin-top: 10px;
 }
+
 /*------------------------*/
 
 .map {

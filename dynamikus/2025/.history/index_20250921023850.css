@@ -521,7 +521,7 @@ body {
   position:fixed; top: 0;left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: #1d1d2434;
+  background-color: #1d1d242c;
 }
 
 .setori_close{
@@ -536,7 +536,6 @@ body {
   position: relative;top: 0;
   max-width: 95vw;
   width: auto;
-  height: auto;
   max-height: 80vh;
   border: 3px solid #b8e9ef;
   border-radius: 20px;
