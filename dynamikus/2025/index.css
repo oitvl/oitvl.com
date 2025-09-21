@@ -473,15 +473,6 @@ body {
 }
 
 /*--------2025/09/20更新-------*/
-#setori img{
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-  border: 3px solid #b8e9ef;
-  border-radius: 20px;
-  margin-top: 10px;
-}
-
 #kikaku ul{
   list-style: none;
 }
@@ -505,9 +496,24 @@ body {
   font-size: min(8vw, 30px);
 }
 
+#kikaku li .rectangle{
+  height: 0.8em;
+  position: relative;top:-8px;
+}
+
 #setori {
   text-decoration: none;
   display: none;
+}
+
+#setori- h3{
+  margin-top: 20px;
+  font-size: min(8vw, 25px);
+  color:#ff8f45;
+}
+
+#setori- a{
+  text-decoration: none;
 }
 
 #setori:target {
@@ -522,6 +528,7 @@ body {
   width: 100vw;
   height: 100vh;
   background-color: #1d1d2434;
+  text-decoration: none;
 }
 
 .setori_close{
