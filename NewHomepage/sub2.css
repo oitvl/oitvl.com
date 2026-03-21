@@ -35,6 +35,7 @@ html, body {
   align-items: center; /* ← flex-end を center に書き換える */
 }
 
+
 body {
   margin: 0;
   font-family: sans-serif;
@@ -107,6 +108,7 @@ a:hover {
   width: 60px; /* XとYouTubeの間のサイズ感 */
   transform: translateY(1px); /* 先ほどの調整。他のアイコンの中心と合わせるために少し下げる */
 }
+
 
 
 
