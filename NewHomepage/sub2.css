@@ -6,6 +6,34 @@ html, body {
   overflow-x: hidden; /* 横スクロールを防ぐ */
 }
 
+/* メニューアイテムの中の a タグを強制的に縦並びにする */
+.menu-item_x a {
+  display: flex; /* これで横並びになる */
+  flex-direction: row; /* 横に並べる（デフォルトなので省略可能） */
+  align-items: flex-end; /* 画像と文字の下端をピシッと揃える */
+  text-decoration: none;
+  position: relative; /* 必要に応じて残しておく。今回はabsoluteを使わないので不要だが、もしhoverエフェクトなどで使うなら */
+}
+
+.icon-text {
+  /* position: absolute; 関係の指定はすべて削除 */
+  position: static; /* positionをリセット */
+  
+  margin-left: 6px; /* 画像と文字の間の横の隙間 */
+  margin-bottom: 3px; /* 文字が少しだけ上に浮きすぎないように微調整。適宜調整して */
+  
+  font-size: 11px; /* 以前と同じ小さめのサイズ。主張しすぎないように */
+  color: #555;     /* 以前と同じグレー。アイコン本体を目立たせる */
+  font-weight: bold;
+  white-space: nowrap; /* 文字が途中で改行されないようにする */
+  line-height: 1; /* 行の高さを1にして、下端揃えを正確に */
+}
+
+/* 横並びのバランスが崩れた場合の調整（必要であれば） */
+.menu-group {
+  display: flex;
+  align-items: center; /* ← flex-end を center に書き換える */
+}
 
 body {
   margin: 0;
@@ -50,7 +78,7 @@ a:hover {
 
 .nav-button {
   display: inline-block;
-  padding: 20px 40px;
+  padding: 15px 23px;
   background-color: #f0f0f0;
   color: #333;
   text-decoration: none;
@@ -66,7 +94,19 @@ a:hover {
 }
 
 
+.menu-item_y img {
+  width: 90px; /* 横長なので少し幅を持たせつつ、大きすぎないサイズに */
+  transform: translateY(2px); /* ほんの少しだけ下に下げて中心を合わせる */
+}
 
+.menu-item_x img {
+  width: 50px;
+  height: auto;
+}
+.menu-item_i img {
+  width: 60px; /* XとYouTubeの間のサイズ感 */
+  transform: translateY(1px); /* 先ほどの調整。他のアイコンの中心と合わせるために少し下げる */
+}
 
 
 
